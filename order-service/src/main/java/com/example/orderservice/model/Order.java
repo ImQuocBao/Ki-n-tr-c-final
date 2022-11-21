@@ -15,13 +15,9 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
 	private Integer userId;
-
 	private String userEmail;
-
 	private String userAddress;
-
 	private boolean statusOrder; 
 	
 }

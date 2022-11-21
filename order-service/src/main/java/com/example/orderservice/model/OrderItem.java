@@ -12,14 +12,9 @@ public class OrderItem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
 	private String bookName;
-	
 	private Integer bookId;
-	
 	private Double price;
-	
 	private Integer quatity;
-
 	private Integer orderId;
 }

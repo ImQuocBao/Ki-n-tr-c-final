@@ -16,8 +16,10 @@ import lombok.RequiredArgsConstructor;
 public class OrderService {
 
 	private final OrderRepository orderRepository;
+
 	private final OrderItemService orderItemService;
-	
+
+
 	public OrderDto getOrderByUserId(Integer id) {
 		Order order = orderRepository.getOrderByUserId(id);
 		List<OrderItem> orderItems = orderItemService.getOrderByOrderId(order.getId());

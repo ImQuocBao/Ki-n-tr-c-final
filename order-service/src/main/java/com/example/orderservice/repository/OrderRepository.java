@@ -12,4 +12,6 @@ public interface OrderRepository extends CrudRepository<Order, Integer>{
 
 	@Query("Select o from Order o where o.userId = ?1 and o.statusOrder = true")
 	Order getOrderByUserId(Integer id);
+
+
 }
