@@ -31,8 +31,9 @@ public class OrderController {
 	private final OrderItemRepository itemRepository;
 
 	@GetMapping("/order")
-//	@Cacheable(value = "dto", key = "#cusId")
+	@Cacheable(value = "dto", key = "#id")
 	public ResponseEntity<?> getOrderByCustomer(@RequestParam("cus_id") Integer id) {
+		System.out.println("Call Again");
 		OrderDto dto = orderService.getOrderByUserId(id);
 		return ResponseEntity.ok(dto);
 	}

@@ -11,13 +11,9 @@ import lombok.Data;
 public class OrderDto {
 
 	private Integer id;
-
 	private Integer userId;
-
 	private String userEmail;
-
 	private String userAddress;
-
 	private boolean statusOrder; 
 	List<OrderItem> orderItems;
 }

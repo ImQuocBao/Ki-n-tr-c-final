@@ -6,10 +6,7 @@ import lombok.Data;
 public class OrderItemDto{
 
 	private String bookName;
-
 	private Integer bookId;
-
 	private Double price;
-
 	private Integer quatity;
 }
