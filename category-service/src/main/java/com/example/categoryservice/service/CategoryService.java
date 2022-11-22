@@ -6,6 +6,7 @@ import com.example.categoryservice.model.vo.ResponseTemplateVO;
 import com.example.categoryservice.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -30,5 +31,10 @@ public class CategoryService {
 		responseTemplateVO.setBooks(books);
 		responseTemplateVO.setCategory(category);
 		return responseTemplateVO;
+	}
+
+	@Transactional(readOnly = true)
+	public Category findById(int id){
+		return categoryRepository.findById(id).orElse(null);
 	}
 }

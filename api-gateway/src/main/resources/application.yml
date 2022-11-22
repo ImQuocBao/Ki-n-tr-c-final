@@ -1,0 +1,29 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: API-GateWay
+  cloud:
+    gateway:
+      routes:
+        - id: book-service
+          uri: lb://BOOK-SERVICE
+          predicates:
+            - Path=/book-service/**
+        - id: category-service
+          uri: lb://CATEGORY-SERVICE
+          predicates:
+            - Path=/category-service/**
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order-service/**
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl.defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
